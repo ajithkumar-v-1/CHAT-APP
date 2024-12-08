@@ -1,4 +1,7 @@
-Chat Application
+                                                                                 Chat Application
+
+
+
 Welcome to the Chat Application! This full-stack chat app allows users to send messages in real-time, join chat rooms, and manage their profile settings. The project is built using a MERN stack (MongoDB, Express.js, React.js, Node.js) and includes features like user authentication, socket integration for live chat, and secure communication.
 
 Table of Contents
