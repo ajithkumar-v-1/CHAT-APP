@@ -5,7 +5,7 @@ import { connectDB } from "./lib/db.js";
 import cookieParser from "cookie-parser";
 import messageRoute from "./routes/message.route.js";
 import cors from "cors";
-import { app, httpServer } from "./lib/socket.js";
+import { app, httpServer } from "./Socket.js";
 
 import path from "path";
 
@@ -16,7 +16,6 @@ const __dirname = path.resolve();
 
 app.use(express.json());
 app.use(cookieParser());
-
 
 app.use(
   cors({
@@ -30,7 +29,6 @@ app.use(
 app.use("/api/auth", authRoute);
 app.use("/api/messages", messageRoute);
 
-
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
@@ -39,9 +37,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-
 httpServer.listen(PORT, () => {
   console.log("Server is running on PORT", PORT);
   connectDB();
 });
-
